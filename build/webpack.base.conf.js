@@ -24,11 +24,11 @@ module.exports = {
       // publicPath:'./'
   },
   resolve: {
-    extensions: ['.js', '.vue', '.json'],
+    extensions: ['.js', '.vue', '.json'], // 表示以这些后缀结尾的文件，不用写后缀名
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
-    }
+    } //
   },
   module: {
     rules: [
@@ -46,7 +46,7 @@ module.exports = {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
         options: {
-          limit: 10000,
+          limit: 10000, // 表示图片要是不超过10k就转化为base64位，超过就引用源文件
           name: utils.assetsPath('img/[name].[hash:7].[ext]')
         }
       },
